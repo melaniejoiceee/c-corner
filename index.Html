@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ec4899" />
+    <title>C++ Corner</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- WELCOME SCREEN -->
+    <section id="welcomeScreen" class="welcome-screen">
+      <div class="welcome-card">
+        <div class="welcome-icon">
+          <i class="fa-solid fa-heart"></i>
+        </div>
+
+        <p class="welcome-small">YOUR LITTLE SPACE TO LEARN</p>
+        <h1>Welcome to <span>C++ Corner!</span></h1>
+        <p class="welcome-description">
+          Learn C++ programming one step at a time. Explore lessons, practice
+          coding, and grow your skills!
+        </p>
+
+        <div class="welcome-form">
+          <label for="userName">What should we call you?</label>
+          <input
+            type="text"
+            id="userName"
+            placeholder="Enter your name..."
+            maxlength="40"
+          />
+
+          <button id="startButton" class="primary-btn">
+            Start Learning <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <p class="welcome-footer">Made with love for future programmers ♡</p>
+      </div>
+    </section>
+
+    <!-- MAIN WEBSITE -->
+    <div id="mainWebsite" class="main-website hidden">
+      <!-- HEADER -->
+      <header class="header">
+        <div class="header-left">
+          <div class="logo-icon">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <span class="logo-name">C++ Corner</span>
+        </div>
+
+        <div class="header-right">
+          <span class="header-greeting" id="headerGreeting">
+            Hello, Learner!
+          </span>
+        </div>
+      </header>
+
+      <!-- MAIN CONTENT -->
+      <main class="content">
+        <!-- HOME PAGE -->
+        <section id="homePage" class="page active">
+          <div class="hero-section">
+            <div class="hero-text">
+              <span class="section-tag">
+                <i class="fa-solid fa-heart"></i> LEARN • CODE • GROW
+              </span>
+
+              <h1>
+                Welcome to your<br />
+                <span>coding corner!</span>
+              </h1>
+
+              <p>
+                Your journey to becoming a programmer starts here. Learn,
+                explore, and discover the wonderful world of C++ programming!
+              </p>
+
+              <button class="primary-btn" onclick="showPage('lessonsPage')">
+                Explore Lessons
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+
+            <div class="hero-illustration">
+              <div class="illustration-circle">
+                <i class="fa-solid fa-laptop-code"></i>
+              </div>
+              <span class="floating-heart heart-one">♡</span>
+              <span class="floating-heart heart-two">✿</span>
+              <span class="floating-heart heart-three">♡</span>
+            </div>
+          </div>
+
+          <div class="home-intro">
+            <div class="section-heading">
+              <span class="section-tag">ABOUT OUR WEBSITE</span>
+              <h2>What is C++ Corner?</h2>
+            </div>
+
+            <p>
+              C++ Corner is an educational website designed to help students
+              understand and learn C++ programming. It covers different
+              programming topics, from minor fundamental concepts to major and
+              advanced topics. Whether you are a beginner or someone who wants
+              to improve your programming knowledge, this website provides
+              easy-to-understand explanations and code examples to guide you
+              throughout your learning journey.
+            </p>
+          </div>
+
+          <div class="home-cards">
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fa-solid fa-book-open"></i>
+              </div>
+              <h3>Easy Lessons</h3>
+              <p>Explore C++ topics with simple explanations.</p>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <h3>Code Examples</h3>
+              <p>Understand concepts through sample programs.</p>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fa-solid fa-bookmark"></i>
+              </div>
+              <h3>Save Lessons</h3>
+              <p>Bookmark important lessons for later review.</p>
+            </div>
+          </div>
+
+          <div class="creator-section">
+            <i class="fa-solid fa-heart"></i>
+            <p>Creator: Melanie Joice M., Crizzel C., Eddieson R.</p>
+            <span>© 2026 C++ Corner. All rights reserved.</span>
+          </div>
+        </section>
+
+        <!-- LESSONS PAGE -->
+        <section id="lessonsPage" class="page">
+          <div class="page-heading">
+            <span class="section-tag">YOUR LEARNING SPACE</span>
+            <h1>C++ <span>Lessons</span></h1>
+            <p>Discover the fundamentals and explore more C++ topics.</p>
+          </div>
+
+          <div class="lesson-summary">
+            <div>
+              <i class="fa-solid fa-book-open"></i>
+              <span id="lessonCount">0 Lessons</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-bookmark"></i>
+              <span id="bookmarkCount">0 Saved</span>
+            </div>
+          </div>
+
+          <div id="lessonGrid" class="lesson-grid">
+            <!-- Lesson cards generated by JavaScript -->
+          </div>
+        </section>
+
+        <!-- LESSON DETAILS PAGE -->
+        <section id="lessonDetailPage" class="page">
+          <button class="back-button" id="backToLessons">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Lessons
+          </button>
+
+          <div id="lessonDetail">
+            <!-- Lesson content generated by JavaScript -->
+          </div>
+        </section>
+
+        <!-- USER'S CORNER PAGE -->
+        <section id="userPage" class="page">
+          <div class="page-heading">
+            <span class="section-tag">YOUR PERSONAL SPACE</span>
+            <h1>User's <span>Corner</span></h1>
+            <p>Keep track of your learning journey and saved lessons.</p>
+          </div>
+
+          <div class="user-profile-card">
+            <div class="user-avatar">
+              <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="user-details">
+              <span>WELCOME BACK!</span>
+              <h2 id="profileName">Learner</h2>
+              <p>C++ Corner Student</p>
+            </div>
+          </div>
+
+          <div class="user-stats">
+            <div class="stat-card">
+              <i class="fa-solid fa-book-open"></i>
+              <h2 id="totalLessons">0</h2>
+              <p>Available Lessons</p>
+            </div>
+
+            <div class="stat-card">
+              <i class="fa-solid fa-bookmark"></i>
+              <h2 id="totalBookmarks">0</h2>
+              <p>Saved Lessons</p>
+            </div>
+          </div>
+
+          <div class="bookmarks-section">
+            <div class="section-heading">
+              <span class="section-tag">YOUR COLLECTION</span>
+              <h2>My Bookmarked Lessons ♡</h2>
+              <p>Your favorite lessons are saved here for easy access.</p>
+            </div>
+
+            <div id="bookmarkedLessons" class="lesson-grid">
+              <!-- Bookmarked lessons generated by JavaScript -->
+            </div>
+          </div>
+
+          <button id="logoutButton" class="logout-button">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Back to Welcome Screen
+          </button>
+        </section>
+      </main>
+
+      <!-- BOTTOM NAVIGATION -->
+      <nav class="bottom-nav">
+        <button class="nav-item active" data-page="homePage">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </button>
+
+        <button class="nav-item" data-page="lessonsPage">
+          <i class="fa-solid fa-book-open"></i>
+          <span>Lessons</span>
+        </button>
+
+        <button class="nav-item" data-page="userPage">
+          <i class="fa-solid fa-user"></i>
+          <span>User's Corner</span>
+        </button>
+      </nav>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
